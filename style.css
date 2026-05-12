@@ -4,9 +4,21 @@
 
 @layer utilities {
   .glass {
-    @apply bg-surface backdrop-blur-xl border border-surfaceBorder;
+    @apply bg-surface backdrop-blur-2xl border border-surfaceBorder;
   }
   
+  .glow-primary {
+    @apply hover:shadow-[0_0_30px_rgba(139,92,246,0.4)] transition-shadow duration-300;
+  }
+
+  .glow-secondary {
+    @apply hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-shadow duration-300;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
+
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }

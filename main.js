@@ -29,4 +29,16 @@ const initParallax = () => {
 };
 
 // Initialize after DOM is fully loaded
-document.addEventListener('DOMContentLoaded', initParallax);
+document.addEventListener('DOMContentLoaded', () => {
+  initParallax();
+
+  // Scroll Parallax for Spline Background
+  const splineContainer = document.querySelector('.spline-container');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    if (splineContainer) {
+      splineContainer.style.transform = `translateX(-10%) translateY(${scrolled * 0.4}px)`;
+    }
+  });
+});
